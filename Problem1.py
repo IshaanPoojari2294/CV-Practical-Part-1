@@ -31,9 +31,9 @@ class ColorIdentifier:
         hsv = cv2.cvtColor(color_frame, cv2.COLOR_BGR2HSV)
         red_mask = cv2.inRange(hsv, red_lower, red_upper)
         blue_mask = cv2.inRange(hsv, blue_lower, blue_upper)
-        _, red_contours, _ = cv2.findContours(
+        red_contours, _ = cv2.findContours(
             red_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-        _, blue_contours, _ = cv2.findContours(
+        blue_contours, _ = cv2.findContours(
             blue_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
         if len(red_contours) > 0 and len(blue_contours) > 0:
