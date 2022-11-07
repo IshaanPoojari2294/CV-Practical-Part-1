@@ -1,0 +1,17 @@
+
+[Unit]
+Description= ComputerVisionDetection
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=2
+User=ishaanpoojari
+ExecStartPre=conda activate Robomasters
+ExecStart= python/ishaanpoojari/IshaanFiles/NYU/Robomasters/CVMidterm/CVMidtermProblem1.py
+
+[Install]
+WantedBy=multi-user.target
+
